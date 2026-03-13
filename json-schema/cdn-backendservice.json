@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-search/google-cloud-cdn/refs/heads/main/json-schema/cdn-backendservice.json",
+  "title": "Google Cloud CDN Backend Service",
+  "description": "Represents a CDN-enabled backend service resource, including its CDN caching policy, backends, health checks, and protocol configuration.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for the resource."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the resource."
+    },
+    "description": {
+      "type": "string",
+      "description": "An optional description of this resource."
+    },
+    "selfLink": {
+      "type": "string",
+      "description": "Server-defined URL for the resource."
+    },
+    "protocol": {
+      "type": "string",
+      "description": "The protocol this backend service uses to communicate with backends.",
+      "enum": [
+        "HTTP",
+        "HTTPS",
+        "HTTP2",
+        "TCP",
+        "SSL"
+      ]
+    },
+    "enableCDN": {
+      "type": "boolean",
+      "description": "If true, enables Cloud CDN for the backend service."
+    },
+    "cdnPolicy": {
+      "type": "object",
+      "description": "Cloud CDN configuration for this backend service.",
+      "properties": {
+        "cacheMode": {
+          "type": "string",
+          "description": "Specifies the cache setting for all responses from this backend.",
+          "enum": [
+            "USE_ORIGIN_HEADERS",
+            "FORCE_CACHE_ALL",
+            "CACHE_ALL_STATIC"
+          ]
+        },
+        "defaultTtl": {
+          "type": "integer",
+          "description": "Default TTL for cached content in seconds."
+        },
+        "maxTtl": {
+          "type": "integer",
+          "description": "Maximum allowed TTL for cached content in seconds."
+        },
+        "clientTtl": {
+          "type": "integer",
+          "description": "Maximum TTL allowed in the Cache-Control response directive."
+        },
+        "negativeCaching": {
+          "type": "boolean",
+          "description": "Negative caching allows caching of certain non-successful responses."
+        },
+        "signedUrlCacheMaxAgeSec": {
+          "type": "string",
+          "description": "Maximum number of seconds the response to a signed URL request will be cached."
+        }
+      }
+    },
+    "backends": {
+      "type": "array",
+      "description": "The list of backends that serve this backend service.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "balancingMode": {
+            "type": "string"
+          },
+          "capacityScaler": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "healthChecks": {
+      "type": "array",
+      "description": "The list of URLs to the health check resources.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "creationTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp in RFC3339 text format."
+    }
+  },
+  "required": ["name"]
+}

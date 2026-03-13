@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@vocab": "https://cloud.google.com/cdn/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "gcp": "https://cloud.google.com/schema#",
+    "BackendService": "gcp:CDNBackendService",
+    "UrlMap": "gcp:CDNUrlMap",
+    "CacheInvalidationRule": "gcp:CDNCacheInvalidationRule",
+    "name": "schema:name",
+    "description": "schema:description",
+    "id": "schema:identifier",
+    "selfLink": "schema:url",
+    "protocol": "gcp:protocol",
+    "enableCDN": "gcp:enableCDN",
+    "cacheMode": "gcp:cacheMode",
+    "defaultTtl": {
+      "@id": "gcp:defaultTtl",
+      "@type": "xsd:integer"
+    },
+    "maxTtl": {
+      "@id": "gcp:maxTtl",
+      "@type": "xsd:integer"
+    },
+    "creationTimestamp": {
+      "@id": "dcterms:created",
+      "@type": "xsd:dateTime"
+    }
+  }
+}

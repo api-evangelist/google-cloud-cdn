@@ -1,0 +1,344 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud CDN API
+  description: >-
+    Manages Cloud CDN resources including backend services with CDN enabled, URL
+    maps, and cache invalidation through the Compute Engine API.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/cdn
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://compute.googleapis.com/compute/v1
+    description: Google Compute Engine API v1 (Cloud CDN is managed via Compute Engine)
+tags:
+  - name: BackendServices
+    description: Manage CDN-enabled backend services
+  - name: UrlMaps
+    description: Manage URL maps for routing
+  - name: CacheInvalidation
+    description: Invalidate cached content
+paths:
+  /projects/{project}/global/backendServices:
+    get:
+      operationId: listBackendServices
+      summary: List Backend Services
+      description: Retrieves the list of backend service resources available to the project.
+      tags:
+        - BackendServices
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BackendService'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: insertBackendService
+      summary: Create Backend Service
+      description: Creates a backend service resource with CDN configuration.
+      tags:
+        - BackendServices
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BackendService'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/backendServices/{backendService}:
+    get:
+      operationId: getBackendService
+      summary: Get Backend Service
+      description: Returns the specified backend service resource.
+      tags:
+        - BackendServices
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: backendService
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendService'
+    patch:
+      operationId: patchBackendService
+      summary: Update Backend Service
+      description: Patches the specified backend service resource with the data included in the request.
+      tags:
+        - BackendServices
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: backendService
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BackendService'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteBackendService
+      summary: Delete Backend Service
+      description: Deletes the specified backend service.
+      tags:
+        - BackendServices
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: backendService
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/urlMaps:
+    get:
+      operationId: listUrlMaps
+      summary: List URL Maps
+      description: Retrieves the list of URL map resources available to the project.
+      tags:
+        - UrlMaps
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UrlMap'
+                  nextPageToken:
+                    type: string
+  /projects/{project}/global/backendServices/{backendService}/invalidateCache:
+    post:
+      operationId: invalidateCache
+      summary: Invalidate Cache
+      description: Initiates a cache invalidation operation, invalidating the specified path.
+      tags:
+        - CacheInvalidation
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: backendService
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CacheInvalidationRule'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  schemas:
+    BackendService:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        selfLink:
+          type: string
+        protocol:
+          type: string
+          enum:
+            - HTTP
+            - HTTPS
+            - HTTP2
+            - TCP
+            - SSL
+        enableCDN:
+          type: boolean
+        cdnPolicy:
+          type: object
+          properties:
+            cacheMode:
+              type: string
+              enum:
+                - USE_ORIGIN_HEADERS
+                - FORCE_CACHE_ALL
+                - CACHE_ALL_STATIC
+            defaultTtl:
+              type: integer
+            maxTtl:
+              type: integer
+            clientTtl:
+              type: integer
+            negativeCaching:
+              type: boolean
+            signedUrlCacheMaxAgeSec:
+              type: string
+        backends:
+          type: array
+          items:
+            type: object
+            properties:
+              group:
+                type: string
+              balancingMode:
+                type: string
+              capacityScaler:
+                type: number
+        healthChecks:
+          type: array
+          items:
+            type: string
+        creationTimestamp:
+          type: string
+          format: date-time
+    UrlMap:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        selfLink:
+          type: string
+        defaultService:
+          type: string
+        hostRules:
+          type: array
+          items:
+            type: object
+            properties:
+              hosts:
+                type: array
+                items:
+                  type: string
+              pathMatcher:
+                type: string
+        pathMatchers:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              defaultService:
+                type: string
+        creationTimestamp:
+          type: string
+          format: date-time
+    CacheInvalidationRule:
+      type: object
+      properties:
+        path:
+          type: string
+        host:
+          type: string
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        operationType:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
+        progress:
+          type: integer
+        insertTime:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/compute: Full access to Compute Engine
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+security:
+  - oauth2:
+      - https://www.googleapis.com/auth/compute

@@ -1,0 +1,50 @@
+name: Google Cloud CDN
+description: >-
+  Google Cloud CDN (Content Delivery Network) uses Google's globally distributed
+  edge points of presence to cache HTTP(S) load-balanced content close to users.
+  It accelerates content delivery, reduces serving costs, and improves
+  availability by leveraging Google's global network infrastructure for fast,
+  reliable content distribution.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-search/google-cloud-cdn/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - Google Cloud
+  - CDN
+  - Content Delivery
+  - Caching
+  - Networking
+apis:
+  - name: Google Cloud CDN API
+    description: >-
+      The Cloud CDN API enables programmatic management of CDN-enabled backend
+      services, URL maps, cache invalidation, and edge caching policies through
+      the Compute Engine API, providing control over content distribution and
+      caching behavior.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/cdn/docs
+    baseURL: https://compute.googleapis.com
+    tags:
+      - Backend Services
+      - URL Maps
+      - Cache Invalidation
+      - Edge Caching
+      - Load Balancing
+    properties:
+      - type: OpenAPI
+        url: openapi/cdn-openapi.yml
+      - type: JSONSchema
+        url: json-schema/cdn-backendservice.json
+common:
+  - type: GettingStarted
+    url: https://cloud.google.com/cdn/docs/quickstart
+  - type: Pricing
+    url: https://cloud.google.com/cdn/pricing
+  - type: JSON-LD
+    url: json-ld/cdn-context.jsonld
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
