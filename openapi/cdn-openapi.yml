@@ -25,7 +25,7 @@ paths:
   /projects/{project}/global/backendServices:
     get:
       operationId: listBackendServices
-      summary: List Backend Services
+      summary: Google Cloud CDN List Backend Services
       description: Retrieves the list of backend service resources available to the project.
       tags:
         - BackendServices
@@ -51,7 +51,7 @@ paths:
                     type: string
     post:
       operationId: insertBackendService
-      summary: Create Backend Service
+      summary: Google Cloud CDN Create Backend Service
       description: Creates a backend service resource with CDN configuration.
       tags:
         - BackendServices
@@ -76,7 +76,7 @@ paths:
   /projects/{project}/global/backendServices/{backendService}:
     get:
       operationId: getBackendService
-      summary: Get Backend Service
+      summary: Google Cloud CDN Get Backend Service
       description: Returns the specified backend service resource.
       tags:
         - BackendServices
@@ -100,7 +100,7 @@ paths:
                 $ref: '#/components/schemas/BackendService'
     patch:
       operationId: patchBackendService
-      summary: Update Backend Service
+      summary: Google Cloud CDN Update Backend Service
       description: Patches the specified backend service resource with the data included in the request.
       tags:
         - BackendServices
@@ -129,7 +129,7 @@ paths:
                 $ref: '#/components/schemas/Operation'
     delete:
       operationId: deleteBackendService
-      summary: Delete Backend Service
+      summary: Google Cloud CDN Delete Backend Service
       description: Deletes the specified backend service.
       tags:
         - BackendServices
@@ -154,7 +154,7 @@ paths:
   /projects/{project}/global/urlMaps:
     get:
       operationId: listUrlMaps
-      summary: List URL Maps
+      summary: Google Cloud CDN List URL Maps
       description: Retrieves the list of URL map resources available to the project.
       tags:
         - UrlMaps
@@ -181,7 +181,7 @@ paths:
   /projects/{project}/global/backendServices/{backendService}/invalidateCache:
     post:
       operationId: invalidateCache
-      summary: Invalidate Cache
+      summary: Google Cloud CDN Invalidate Cache
       description: Initiates a cache invalidation operation, invalidating the specified path.
       tags:
         - CacheInvalidation
