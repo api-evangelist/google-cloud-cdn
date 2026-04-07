@@ -17,10 +17,10 @@ servers:
 tags:
   - name: BackendServices
     description: Manage CDN-enabled backend services
-  - name: UrlMaps
-    description: Manage URL maps for routing
   - name: CacheInvalidation
     description: Invalidate cached content
+  - name: UrlMaps
+    description: Manage URL maps for routing
 paths:
   /projects/{project}/global/backendServices:
     get:
