@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud CDN API — UrlMaps
+  description: 'Google Cloud CDN API — UrlMaps. 1 operations. Lead operation: Google Cloud CDN List URL Maps. Self-contained
+    Naftiko capability covering one Google Cloud Cdn business surface.'
+  tags:
+  - Google Cloud Cdn
+  - UrlMaps
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_CDN_API_KEY: GOOGLE_CLOUD_CDN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cdn-urlmaps
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud CDN API — UrlMaps business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-urlMaps
+      path: /projects/{project}/global/urlMaps
+      operations:
+      - name: listurlmaps
+        method: GET
+        description: Google Cloud CDN List URL Maps
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_CDN_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: cdn-urlmaps-rest
+    port: 8080
+    description: REST adapter for Google Cloud CDN API — UrlMaps. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/urlmaps
+      name: projects-project-global-urlmaps
+      description: REST surface for projects-project-global-urlMaps.
+      operations:
+      - method: GET
+        name: listurlmaps
+        description: Google Cloud CDN List URL Maps
+        call: cdn-urlmaps.listurlmaps
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cdn-urlmaps-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud CDN API — UrlMaps. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-cloud-cdn-list-url
+      description: Google Cloud CDN List URL Maps
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cdn-urlmaps.listurlmaps
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.

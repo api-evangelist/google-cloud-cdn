@@ -1,0 +1,254 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud CDN API — BackendServices
+  description: 'Google Cloud CDN API — BackendServices. 5 operations. Lead operation: Google Cloud CDN List Backend Services.
+    Self-contained Naftiko capability covering one Google Cloud Cdn business surface.'
+  tags:
+  - Google Cloud Cdn
+  - BackendServices
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_CDN_API_KEY: GOOGLE_CLOUD_CDN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cdn-backendservices
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud CDN API — BackendServices business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-backendServices
+      path: /projects/{project}/global/backendServices
+      operations:
+      - name: listbackendservices
+        method: GET
+        description: Google Cloud CDN List Backend Services
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+      - name: insertbackendservice
+        method: POST
+        description: Google Cloud CDN Create Backend Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: projects-project-global-backendServices-backendService
+      path: /projects/{project}/global/backendServices/{backendService}
+      operations:
+      - name: getbackendservice
+        method: GET
+        description: Google Cloud CDN Get Backend Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: backendService
+          in: path
+          type: string
+          required: true
+      - name: patchbackendservice
+        method: PATCH
+        description: Google Cloud CDN Update Backend Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: backendService
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletebackendservice
+        method: DELETE
+        description: Google Cloud CDN Delete Backend Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: backendService
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_CDN_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: cdn-backendservices-rest
+    port: 8080
+    description: REST adapter for Google Cloud CDN API — BackendServices. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/backendservices
+      name: projects-project-global-backendservices
+      description: REST surface for projects-project-global-backendServices.
+      operations:
+      - method: GET
+        name: listbackendservices
+        description: Google Cloud CDN List Backend Services
+        call: cdn-backendservices.listbackendservices
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: insertbackendservice
+        description: Google Cloud CDN Create Backend Service
+        call: cdn-backendservices.insertbackendservice
+        with:
+          project: rest.project
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{project}/global/backendservices/{backendservice}
+      name: projects-project-global-backendservices-backendservice
+      description: REST surface for projects-project-global-backendServices-backendService.
+      operations:
+      - method: GET
+        name: getbackendservice
+        description: Google Cloud CDN Get Backend Service
+        call: cdn-backendservices.getbackendservice
+        with:
+          project: rest.project
+          backendService: rest.backendService
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchbackendservice
+        description: Google Cloud CDN Update Backend Service
+        call: cdn-backendservices.patchbackendservice
+        with:
+          project: rest.project
+          backendService: rest.backendService
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletebackendservice
+        description: Google Cloud CDN Delete Backend Service
+        call: cdn-backendservices.deletebackendservice
+        with:
+          project: rest.project
+          backendService: rest.backendService
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cdn-backendservices-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud CDN API — BackendServices. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-cdn-list-backend
+      description: Google Cloud CDN List Backend Services
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cdn-backendservices.listbackendservices
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-cdn-create-backend
+      description: Google Cloud CDN Create Backend Service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cdn-backendservices.insertbackendservice
+      with:
+        project: tools.project
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-cdn-get-backend
+      description: Google Cloud CDN Get Backend Service
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cdn-backendservices.getbackendservice
+      with:
+        project: tools.project
+        backendService: tools.backendService
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-cdn-update-backend
+      description: Google Cloud CDN Update Backend Service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: cdn-backendservices.patchbackendservice
+      with:
+        project: tools.project
+        backendService: tools.backendService
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-cdn-delete-backend
+      description: Google Cloud CDN Delete Backend Service
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: cdn-backendservices.deletebackendservice
+      with:
+        project: tools.project
+        backendService: tools.backendService
+      outputParameters:
+      - type: object
+        mapping: $.
