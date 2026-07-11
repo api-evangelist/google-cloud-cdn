@@ -43,6 +43,12 @@ apis:
       - type: JSONSchema
         url: json-schema/cdn-backendservice.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-cdn-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-cdn-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-cdn-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-cdn-scopes.yml
   - type: GitHubOrganization
