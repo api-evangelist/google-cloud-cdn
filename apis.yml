@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/cdn-backendservice.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-cdn-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
