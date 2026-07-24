@@ -1,9 +1,7 @@
 openapi: 3.1.0
 info:
-  title: Google Cloud CDN API
-  description: >-
-    Manages Cloud CDN resources including backend services with CDN enabled, URL
-    maps, and cache invalidation through the Compute Engine API.
+  title: Google Cloud CDN BackendServices API
+  description: Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.
   version: 1.0.0
   contact:
     name: Google Cloud
@@ -12,15 +10,14 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
-  - url: https://compute.googleapis.com/compute/v1
-    description: Google Compute Engine API v1 (Cloud CDN is managed via Compute Engine)
+- url: https://compute.googleapis.com/compute/v1
+  description: Google Compute Engine API v1 (Cloud CDN is managed via Compute Engine)
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/compute
 tags:
-  - name: BackendServices
-    description: Manage CDN-enabled backend services
-  - name: CacheInvalidation
-    description: Invalidate cached content
-  - name: UrlMaps
-    description: Manage URL maps for routing
+- name: BackendServices
+  description: Manage CDN-enabled backend services
 paths:
   /projects/{project}/global/backendServices:
     get:
@@ -28,13 +25,13 @@ paths:
       summary: Google Cloud CDN List Backend Services
       description: Retrieves the list of backend service resources available to the project.
       tags:
-        - BackendServices
+      - BackendServices
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -54,13 +51,13 @@ paths:
       summary: Google Cloud CDN Create Backend Service
       description: Creates a backend service resource with CDN configuration.
       tags:
-        - BackendServices
+      - BackendServices
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -79,18 +76,18 @@ paths:
       summary: Google Cloud CDN Get Backend Service
       description: Returns the specified backend service resource.
       tags:
-        - BackendServices
+      - BackendServices
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: backendService
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: backendService
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -103,18 +100,18 @@ paths:
       summary: Google Cloud CDN Update Backend Service
       description: Patches the specified backend service resource with the data included in the request.
       tags:
-        - BackendServices
+      - BackendServices
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: backendService
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: backendService
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -132,75 +129,18 @@ paths:
       summary: Google Cloud CDN Delete Backend Service
       description: Deletes the specified backend service.
       tags:
-        - BackendServices
+      - BackendServices
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: backendService
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Operation'
-  /projects/{project}/global/urlMaps:
-    get:
-      operationId: listUrlMaps
-      summary: Google Cloud CDN List URL Maps
-      description: Retrieves the list of URL map resources available to the project.
-      tags:
-        - UrlMaps
-      parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  items:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/UrlMap'
-                  nextPageToken:
-                    type: string
-  /projects/{project}/global/backendServices/{backendService}/invalidateCache:
-    post:
-      operationId: invalidateCache
-      summary: Google Cloud CDN Invalidate Cache
-      description: Initiates a cache invalidation operation, invalidating the specified path.
-      tags:
-        - CacheInvalidation
-      parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: backendService
-          in: path
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CacheInvalidationRule'
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: backendService
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -224,11 +164,11 @@ components:
         protocol:
           type: string
           enum:
-            - HTTP
-            - HTTPS
-            - HTTP2
-            - TCP
-            - SSL
+          - HTTP
+          - HTTPS
+          - HTTP2
+          - TCP
+          - SSL
         enableCDN:
           type: boolean
         cdnPolicy:
@@ -237,9 +177,9 @@ components:
             cacheMode:
               type: string
               enum:
-                - USE_ORIGIN_HEADERS
-                - FORCE_CACHE_ALL
-                - CACHE_ALL_STATIC
+              - USE_ORIGIN_HEADERS
+              - FORCE_CACHE_ALL
+              - CACHE_ALL_STATIC
             defaultTtl:
               type: integer
             maxTtl:
@@ -268,49 +208,6 @@ components:
         creationTimestamp:
           type: string
           format: date-time
-    UrlMap:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        selfLink:
-          type: string
-        defaultService:
-          type: string
-        hostRules:
-          type: array
-          items:
-            type: object
-            properties:
-              hosts:
-                type: array
-                items:
-                  type: string
-              pathMatcher:
-                type: string
-        pathMatchers:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              defaultService:
-                type: string
-        creationTimestamp:
-          type: string
-          format: date-time
-    CacheInvalidationRule:
-      type: object
-      properties:
-        path:
-          type: string
-        host:
-          type: string
     Operation:
       type: object
       properties:
@@ -339,6 +236,3 @@ components:
           scopes:
             https://www.googleapis.com/auth/compute: Full access to Compute Engine
             https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
-security:
-  - oauth2:
-      - https://www.googleapis.com/auth/compute
