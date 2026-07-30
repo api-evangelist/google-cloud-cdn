@@ -4,7 +4,20 @@ description: >-
   Google Cloud CDN (Content Delivery Network) uses Google's globally distributed edge points of presence to cache
   HTTP(S) load-balanced content close to users. It accelerates content delivery, reduces serving costs, and improves
   availability by leveraging Google's global network infrastructure for fast, reliable content distribution.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-cdn.png
 url: https://raw.githubusercontent.com/api-search/google-cloud-cdn/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -17,32 +30,63 @@ tags:
   - Google Cloud
   - Networking
 apis:
-  - name: Google Cloud CDN API
-    description: >-
-      The Cloud CDN API enables programmatic management of CDN-enabled backend services, URL maps, cache invalidation,
-      and edge caching policies through the Compute Engine API, providing control over content distribution and caching
-      behavior.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/cdn/docs
-    baseURL: https://compute.googleapis.com
-    tags:
-      - Backend Services
-      - Cache Invalidation
-      - Edge Caching
-      - Load Balancing
-      - URL Maps
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/cdn/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/cdn-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/cdn/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/cdn-backendservice.json
+- aid: google-cloud-cdn:google-cloud-cdn-backendservices-api
+  name: Google Cloud CDN BackendServices API
+  description: Manage CDN-enabled backend services
+  humanURL: https://cloud.google.com/cdn/docs
+  baseURL: https://compute.googleapis.com
+  tags:
+  - BackendServices
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-cdn-backendservices-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/cdn/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/cdn/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/cdn-backendservice.json
+- aid: google-cloud-cdn:google-cloud-cdn-cacheinvalidation-api
+  name: Google Cloud CDN CacheInvalidation API
+  description: Invalidate cached content
+  humanURL: https://cloud.google.com/cdn/docs
+  baseURL: https://compute.googleapis.com
+  tags:
+  - CacheInvalidation
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-cdn-cacheinvalidation-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/cdn/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/cdn/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/cdn-backendservice.json
+- aid: google-cloud-cdn:google-cloud-cdn-urlmaps-api
+  name: Google Cloud CDN UrlMaps API
+  description: Manage URL maps for routing
+  humanURL: https://cloud.google.com/cdn/docs
+  baseURL: https://compute.googleapis.com
+  tags:
+  - UrlMaps
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-cdn-urlmaps-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/cdn/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/cdn/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/cdn-backendservice.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-cdn/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-cdn-agentic-access.yml
   - type: VulnerabilityDisclosure
