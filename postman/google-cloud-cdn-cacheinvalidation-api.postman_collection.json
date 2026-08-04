@@ -1,0 +1,232 @@
+{
+  "info": {
+    "_postman_id": "c44f7916-868a-4e44-bc35-c2e2463578de",
+    "name": "Google Cloud CDN BackendServices CacheInvalidation API",
+    "description": "Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:28.000Z",
+    "updatedAt": "2026-07-28T01:46:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c44f7916-868a-4e44-bc35-c2e2463578de"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "backendServices",
+                  "item": [
+                    {
+                      "name": "{backendService}",
+                      "item": [
+                        {
+                          "name": "invalidateCache",
+                          "item": [
+                            {
+                              "name": "Google Cloud CDN Invalidate Cache",
+                              "id": "f9aaef47-5349-45e8-af18-599de96e1990",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"path\": \"<string>\",\n  \"host\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService/invalidateCache",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "global",
+                                    "backendServices",
+                                    ":backendService",
+                                    "invalidateCache"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "6321159c-b0fc-4b51-b28a-8d27d2598981",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "c81d2b4b-162d-4c31-b22b-fa725908ed7f",
+                                      "key": "backendService",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Initiates a cache invalidation operation, invalidating the specified path."
+                              },
+                              "response": [
+                                {
+                                  "id": "0641b421-66e5-4afc-9ce8-46ac08284d47",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"path\": \"<string>\",\n  \"host\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService/invalidateCache",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "global",
+                                        "backendServices",
+                                        ":backendService",
+                                        "invalidateCache"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "backendService"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operationType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"targetLink\": \"<string>\",\n  \"progress\": \"<integer>\",\n  \"insertTime\": \"<dateTime>\"\n}",
+                                  "createdAt": "2026-07-28T01:46:28.000Z",
+                                  "updatedAt": "2026-07-28T01:46:28.000Z",
+                                  "uid": "35240-0641b421-66e5-4afc-9ce8-46ac08284d47"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:28.000Z",
+                              "updatedAt": "2026-07-28T01:46:28.000Z",
+                              "uid": "35240-f9aaef47-5349-45e8-af18-599de96e1990"
+                            }
+                          ],
+                          "id": "7246d415-008c-463a-84fc-c7a93c14f231",
+                          "createdAt": "2026-07-28T01:46:28.000Z",
+                          "updatedAt": "2026-07-28T01:46:28.000Z",
+                          "uid": "35240-7246d415-008c-463a-84fc-c7a93c14f231"
+                        }
+                      ],
+                      "id": "ad101b50-03d9-4e5d-96fc-33432bb10f00",
+                      "createdAt": "2026-07-28T01:46:28.000Z",
+                      "updatedAt": "2026-07-28T01:46:28.000Z",
+                      "uid": "35240-ad101b50-03d9-4e5d-96fc-33432bb10f00"
+                    }
+                  ],
+                  "id": "72923227-79f6-47bd-8b19-fc0ae8694fd9",
+                  "createdAt": "2026-07-28T01:46:28.000Z",
+                  "updatedAt": "2026-07-28T01:46:28.000Z",
+                  "uid": "35240-72923227-79f6-47bd-8b19-fc0ae8694fd9"
+                }
+              ],
+              "id": "370541df-bdb2-4327-bdab-c1ccb5cb64a7",
+              "createdAt": "2026-07-28T01:46:28.000Z",
+              "updatedAt": "2026-07-28T01:46:28.000Z",
+              "uid": "35240-370541df-bdb2-4327-bdab-c1ccb5cb64a7"
+            }
+          ],
+          "id": "8ad7ac0a-c633-439c-8df3-78a0828d44d7",
+          "createdAt": "2026-07-28T01:46:28.000Z",
+          "updatedAt": "2026-07-28T01:46:28.000Z",
+          "uid": "35240-8ad7ac0a-c633-439c-8df3-78a0828d44d7"
+        }
+      ],
+      "id": "1debbafb-a658-420c-a8dc-2a7ac4a44a83",
+      "createdAt": "2026-07-28T01:46:28.000Z",
+      "updatedAt": "2026-07-28T01:46:28.000Z",
+      "uid": "35240-1debbafb-a658-420c-a8dc-2a7ac4a44a83"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}

@@ -1,0 +1,639 @@
+{
+  "info": {
+    "_postman_id": "5f4d28c6-600b-4624-a7cd-c1b900112630",
+    "name": "Google Cloud CDN BackendServices API",
+    "description": "Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:19.000Z",
+    "updatedAt": "2026-07-28T01:46:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5f4d28c6-600b-4624-a7cd-c1b900112630"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "backendServices",
+                  "item": [
+                    {
+                      "name": "{backendService}",
+                      "item": [
+                        {
+                          "name": "Google Cloud CDN Get Backend Service",
+                          "id": "74a1833a-cf8a-4d07-92c8-e0a2e0da316d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "backendServices",
+                                ":backendService"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "7d9822d3-3119-4e10-a973-cf6e285830bd",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "eb83d53c-fa74-4c67-927c-3c35011f8ae0",
+                                  "key": "backendService",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns the specified backend service resource."
+                          },
+                          "response": [
+                            {
+                              "id": "e35ecbc4-79d2-4a1d-bb33-8b425eeacf33",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "global",
+                                    "backendServices",
+                                    ":backendService"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "backendService"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"protocol\": \"HTTP2\",\n  \"enableCDN\": \"<boolean>\",\n  \"cdnPolicy\": {\n    \"cacheMode\": \"USE_ORIGIN_HEADERS\",\n    \"defaultTtl\": \"<integer>\",\n    \"maxTtl\": \"<integer>\",\n    \"clientTtl\": \"<integer>\",\n    \"negativeCaching\": \"<boolean>\",\n    \"signedUrlCacheMaxAgeSec\": \"<string>\"\n  },\n  \"backends\": [\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    },\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    }\n  ],\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"creationTimestamp\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:46:19.000Z",
+                              "updatedAt": "2026-07-28T01:46:19.000Z",
+                              "uid": "35240-e35ecbc4-79d2-4a1d-bb33-8b425eeacf33"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:19.000Z",
+                          "updatedAt": "2026-07-28T01:46:19.000Z",
+                          "uid": "35240-74a1833a-cf8a-4d07-92c8-e0a2e0da316d"
+                        },
+                        {
+                          "name": "Google Cloud CDN Update Backend Service",
+                          "id": "91b80381-fd2c-46d2-9116-4965103c2cc7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"protocol\": \"HTTP2\",\n  \"enableCDN\": \"<boolean>\",\n  \"cdnPolicy\": {\n    \"cacheMode\": \"USE_ORIGIN_HEADERS\",\n    \"defaultTtl\": \"<integer>\",\n    \"maxTtl\": \"<integer>\",\n    \"clientTtl\": \"<integer>\",\n    \"negativeCaching\": \"<boolean>\",\n    \"signedUrlCacheMaxAgeSec\": \"<string>\"\n  },\n  \"backends\": [\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    },\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    }\n  ],\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"creationTimestamp\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "backendServices",
+                                ":backendService"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3f6ba240-c6fa-42bd-ba08-c4dc088339f2",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "c4e4790c-3016-4968-9714-9bc32d7cad09",
+                                  "key": "backendService",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Patches the specified backend service resource with the data included in the request."
+                          },
+                          "response": [
+                            {
+                              "id": "bbb100cb-6079-42c2-bf5b-c0a86b30fa1e",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"protocol\": \"HTTP2\",\n  \"enableCDN\": \"<boolean>\",\n  \"cdnPolicy\": {\n    \"cacheMode\": \"USE_ORIGIN_HEADERS\",\n    \"defaultTtl\": \"<integer>\",\n    \"maxTtl\": \"<integer>\",\n    \"clientTtl\": \"<integer>\",\n    \"negativeCaching\": \"<boolean>\",\n    \"signedUrlCacheMaxAgeSec\": \"<string>\"\n  },\n  \"backends\": [\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    },\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    }\n  ],\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"creationTimestamp\": \"<dateTime>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "global",
+                                    "backendServices",
+                                    ":backendService"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "backendService"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operationType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"targetLink\": \"<string>\",\n  \"progress\": \"<integer>\",\n  \"insertTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:46:19.000Z",
+                              "updatedAt": "2026-07-28T01:46:19.000Z",
+                              "uid": "35240-bbb100cb-6079-42c2-bf5b-c0a86b30fa1e"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:19.000Z",
+                          "updatedAt": "2026-07-28T01:46:19.000Z",
+                          "uid": "35240-91b80381-fd2c-46d2-9116-4965103c2cc7"
+                        },
+                        {
+                          "name": "Google Cloud CDN Delete Backend Service",
+                          "id": "3e57969c-6ffa-45c0-8087-b6c80705c812",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "backendServices",
+                                ":backendService"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "245c879d-e6db-4577-b173-df9c8825452a",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "4d7e98e3-f6a6-4916-b007-d000818e5d62",
+                                  "key": "backendService",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Deletes the specified backend service."
+                          },
+                          "response": [
+                            {
+                              "id": "989ebbf2-cc64-48ec-8666-a55f5b8961a3",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/global/backendServices/:backendService",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "global",
+                                    "backendServices",
+                                    ":backendService"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "backendService"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operationType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"targetLink\": \"<string>\",\n  \"progress\": \"<integer>\",\n  \"insertTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:46:19.000Z",
+                              "updatedAt": "2026-07-28T01:46:19.000Z",
+                              "uid": "35240-989ebbf2-cc64-48ec-8666-a55f5b8961a3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:19.000Z",
+                          "updatedAt": "2026-07-28T01:46:19.000Z",
+                          "uid": "35240-3e57969c-6ffa-45c0-8087-b6c80705c812"
+                        }
+                      ],
+                      "id": "ce6a45e3-d7b1-4365-b5c8-c149ed52dd24",
+                      "createdAt": "2026-07-28T01:46:19.000Z",
+                      "updatedAt": "2026-07-28T01:46:19.000Z",
+                      "uid": "35240-ce6a45e3-d7b1-4365-b5c8-c149ed52dd24"
+                    },
+                    {
+                      "name": "Google Cloud CDN List Backend Services",
+                      "id": "5002154b-36d3-4168-a5c2-40d171299b1f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/global/backendServices",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "global",
+                            "backendServices"
+                          ],
+                          "variable": [
+                            {
+                              "id": "8b56dc91-62d6-4d51-8526-1c5a7c6cbffc",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the list of backend service resources available to the project."
+                      },
+                      "response": [
+                        {
+                          "id": "3c1e5f29-e60e-4d3a-ab38-9c5c817856ed",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/backendServices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "backendServices"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"selfLink\": \"<string>\",\n      \"protocol\": \"SSL\",\n      \"enableCDN\": \"<boolean>\",\n      \"cdnPolicy\": {\n        \"cacheMode\": \"CACHE_ALL_STATIC\",\n        \"defaultTtl\": \"<integer>\",\n        \"maxTtl\": \"<integer>\",\n        \"clientTtl\": \"<integer>\",\n        \"negativeCaching\": \"<boolean>\",\n        \"signedUrlCacheMaxAgeSec\": \"<string>\"\n      },\n      \"backends\": [\n        {\n          \"group\": \"<string>\",\n          \"balancingMode\": \"<string>\",\n          \"capacityScaler\": \"<number>\"\n        },\n        {\n          \"group\": \"<string>\",\n          \"balancingMode\": \"<string>\",\n          \"capacityScaler\": \"<number>\"\n        }\n      ],\n      \"healthChecks\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"creationTimestamp\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"selfLink\": \"<string>\",\n      \"protocol\": \"TCP\",\n      \"enableCDN\": \"<boolean>\",\n      \"cdnPolicy\": {\n        \"cacheMode\": \"CACHE_ALL_STATIC\",\n        \"defaultTtl\": \"<integer>\",\n        \"maxTtl\": \"<integer>\",\n        \"clientTtl\": \"<integer>\",\n        \"negativeCaching\": \"<boolean>\",\n        \"signedUrlCacheMaxAgeSec\": \"<string>\"\n      },\n      \"backends\": [\n        {\n          \"group\": \"<string>\",\n          \"balancingMode\": \"<string>\",\n          \"capacityScaler\": \"<number>\"\n        },\n        {\n          \"group\": \"<string>\",\n          \"balancingMode\": \"<string>\",\n          \"capacityScaler\": \"<number>\"\n        }\n      ],\n      \"healthChecks\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"creationTimestamp\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:46:19.000Z",
+                          "updatedAt": "2026-07-28T01:46:19.000Z",
+                          "uid": "35240-3c1e5f29-e60e-4d3a-ab38-9c5c817856ed"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:19.000Z",
+                      "updatedAt": "2026-07-28T01:46:19.000Z",
+                      "uid": "35240-5002154b-36d3-4168-a5c2-40d171299b1f"
+                    },
+                    {
+                      "name": "Google Cloud CDN Create Backend Service",
+                      "id": "5d828520-8dea-43fa-aedf-f38ec4f83512",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"protocol\": \"HTTP2\",\n  \"enableCDN\": \"<boolean>\",\n  \"cdnPolicy\": {\n    \"cacheMode\": \"USE_ORIGIN_HEADERS\",\n    \"defaultTtl\": \"<integer>\",\n    \"maxTtl\": \"<integer>\",\n    \"clientTtl\": \"<integer>\",\n    \"negativeCaching\": \"<boolean>\",\n    \"signedUrlCacheMaxAgeSec\": \"<string>\"\n  },\n  \"backends\": [\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    },\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    }\n  ],\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"creationTimestamp\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/global/backendServices",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "global",
+                            "backendServices"
+                          ],
+                          "variable": [
+                            {
+                              "id": "84ff2e5d-c050-40d1-bc05-688e90da439f",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates a backend service resource with CDN configuration."
+                      },
+                      "response": [
+                        {
+                          "id": "a28af2e2-cd8f-4f82-aa6d-f7f303d66a16",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"selfLink\": \"<string>\",\n  \"protocol\": \"HTTP2\",\n  \"enableCDN\": \"<boolean>\",\n  \"cdnPolicy\": {\n    \"cacheMode\": \"USE_ORIGIN_HEADERS\",\n    \"defaultTtl\": \"<integer>\",\n    \"maxTtl\": \"<integer>\",\n    \"clientTtl\": \"<integer>\",\n    \"negativeCaching\": \"<boolean>\",\n    \"signedUrlCacheMaxAgeSec\": \"<string>\"\n  },\n  \"backends\": [\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    },\n    {\n      \"group\": \"<string>\",\n      \"balancingMode\": \"<string>\",\n      \"capacityScaler\": \"<number>\"\n    }\n  ],\n  \"healthChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"creationTimestamp\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/backendServices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "backendServices"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operationType\": \"<string>\",\n  \"status\": \"<string>\",\n  \"targetLink\": \"<string>\",\n  \"progress\": \"<integer>\",\n  \"insertTime\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T01:46:19.000Z",
+                          "updatedAt": "2026-07-28T01:46:19.000Z",
+                          "uid": "35240-a28af2e2-cd8f-4f82-aa6d-f7f303d66a16"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:19.000Z",
+                      "updatedAt": "2026-07-28T01:46:19.000Z",
+                      "uid": "35240-5d828520-8dea-43fa-aedf-f38ec4f83512"
+                    }
+                  ],
+                  "id": "134a628f-7786-45d9-a860-620b9a1a2da2",
+                  "createdAt": "2026-07-28T01:46:19.000Z",
+                  "updatedAt": "2026-07-28T01:46:19.000Z",
+                  "uid": "35240-134a628f-7786-45d9-a860-620b9a1a2da2"
+                }
+              ],
+              "id": "4b0c24b2-a10c-4910-833c-94d470d69714",
+              "createdAt": "2026-07-28T01:46:19.000Z",
+              "updatedAt": "2026-07-28T01:46:19.000Z",
+              "uid": "35240-4b0c24b2-a10c-4910-833c-94d470d69714"
+            }
+          ],
+          "id": "51e862ac-f754-43ce-b946-827b54674931",
+          "createdAt": "2026-07-28T01:46:19.000Z",
+          "updatedAt": "2026-07-28T01:46:19.000Z",
+          "uid": "35240-51e862ac-f754-43ce-b946-827b54674931"
+        }
+      ],
+      "id": "fe8480d7-d384-4d1e-bf53-705d0a3f10b8",
+      "createdAt": "2026-07-28T01:46:19.000Z",
+      "updatedAt": "2026-07-28T01:46:19.000Z",
+      "uid": "35240-fe8480d7-d384-4d1e-bf53-705d0a3f10b8"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}

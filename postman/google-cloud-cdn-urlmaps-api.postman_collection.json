@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "f5b79194-f270-47b4-9956-1394aef030a3",
+    "name": "Google Cloud CDN BackendServices UrlMaps API",
+    "description": "Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:29.000Z",
+    "updatedAt": "2026-07-28T01:46:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f5b79194-f270-47b4-9956-1394aef030a3"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "urlMaps",
+                  "item": [
+                    {
+                      "name": "Google Cloud CDN List URL Maps",
+                      "id": "b13d76ae-676f-4a54-9a93-39351b6e0cf2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/global/urlMaps",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "global",
+                            "urlMaps"
+                          ],
+                          "variable": [
+                            {
+                              "id": "9b9dbd03-1eca-46a8-b6d8-ad1272df058f",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the list of URL map resources available to the project."
+                      },
+                      "response": [
+                        {
+                          "id": "d7de5634-4cc8-48d6-8a49-029a93971670",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/global/urlMaps",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "global",
+                                "urlMaps"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"selfLink\": \"<string>\",\n      \"defaultService\": \"<string>\",\n      \"hostRules\": [\n        {\n          \"hosts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"pathMatcher\": \"<string>\"\n        },\n        {\n          \"hosts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"pathMatcher\": \"<string>\"\n        }\n      ],\n      \"pathMatchers\": [\n        {\n          \"name\": \"<string>\",\n          \"defaultService\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"defaultService\": \"<string>\"\n        }\n      ],\n      \"creationTimestamp\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"selfLink\": \"<string>\",\n      \"defaultService\": \"<string>\",\n      \"hostRules\": [\n        {\n          \"hosts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"pathMatcher\": \"<string>\"\n        },\n        {\n          \"hosts\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"pathMatcher\": \"<string>\"\n        }\n      ],\n      \"pathMatchers\": [\n        {\n          \"name\": \"<string>\",\n          \"defaultService\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"defaultService\": \"<string>\"\n        }\n      ],\n      \"creationTimestamp\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:46:29.000Z",
+                          "updatedAt": "2026-07-28T01:46:29.000Z",
+                          "uid": "35240-d7de5634-4cc8-48d6-8a49-029a93971670"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:29.000Z",
+                      "updatedAt": "2026-07-28T01:46:29.000Z",
+                      "uid": "35240-b13d76ae-676f-4a54-9a93-39351b6e0cf2"
+                    }
+                  ],
+                  "id": "eb2f8d2a-30bc-4b3e-9ae1-427def128c6a",
+                  "createdAt": "2026-07-28T01:46:29.000Z",
+                  "updatedAt": "2026-07-28T01:46:29.000Z",
+                  "uid": "35240-eb2f8d2a-30bc-4b3e-9ae1-427def128c6a"
+                }
+              ],
+              "id": "099d1855-fae2-49df-8192-25de801271a6",
+              "createdAt": "2026-07-28T01:46:29.000Z",
+              "updatedAt": "2026-07-28T01:46:29.000Z",
+              "uid": "35240-099d1855-fae2-49df-8192-25de801271a6"
+            }
+          ],
+          "id": "8c1d6c35-e361-4dde-a3ff-79aaf68926b4",
+          "createdAt": "2026-07-28T01:46:29.000Z",
+          "updatedAt": "2026-07-28T01:46:29.000Z",
+          "uid": "35240-8c1d6c35-e361-4dde-a3ff-79aaf68926b4"
+        }
+      ],
+      "id": "e2b7e3cb-67a4-4e1c-9887-f87209bb55a2",
+      "createdAt": "2026-07-28T01:46:29.000Z",
+      "updatedAt": "2026-07-28T01:46:29.000Z",
+      "uid": "35240-e2b7e3cb-67a4-4e1c-9887-f87209bb55a2"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}

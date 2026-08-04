@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-cdn",
+  "sources": [
+    "google-cloud-cdn-backendservices-api-openapi.yml",
+    "google-cloud-cdn-cacheinvalidation-api-openapi.yml",
+    "google-cloud-cdn-urlmaps-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-cdn-backendservices-api-openapi.yml",
+    "google-cloud-cdn-cacheinvalidation-api-openapi.yml",
+    "google-cloud-cdn-urlmaps-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
