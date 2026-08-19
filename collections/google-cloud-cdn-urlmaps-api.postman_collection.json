@@ -1,0 +1,153 @@
+{
+  "item": [
+    {
+      "id": "3ca27c94-da98-41ea-91df-8307258613ff",
+      "name": "UrlMaps",
+      "description": {
+        "content": "Manage URL maps for routing",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8eca571b-c21c-4463-b155-7f1bfb27cf6d",
+          "name": "Google Cloud CDN List URL Maps",
+          "request": {
+            "name": "Google Cloud CDN List URL Maps",
+            "description": {
+              "content": "Retrieves the list of URL map resources available to the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "urlMaps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "019204dd-3bd4-492e-af2a-927dec462384",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "urlMaps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"selfLink\": \"string\",\n      \"defaultService\": \"string\",\n      \"hostRules\": [\n        {\n          \"hosts\": [\n            \"string\",\n            \"string\"\n          ],\n          \"pathMatcher\": \"string\"\n        },\n        {\n          \"hosts\": [\n            \"string\",\n            \"string\"\n          ],\n          \"pathMatcher\": \"string\"\n        }\n      ],\n      \"pathMatchers\": [\n        {\n          \"name\": \"string\",\n          \"defaultService\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"defaultService\": \"string\"\n        }\n      ],\n      \"creationTimestamp\": \"1959-02-07T11:18:04.965Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"selfLink\": \"string\",\n      \"defaultService\": \"string\",\n      \"hostRules\": [\n        {\n          \"hosts\": [\n            \"string\",\n            \"string\"\n          ],\n          \"pathMatcher\": \"string\"\n        },\n        {\n          \"hosts\": [\n            \"string\",\n            \"string\"\n          ],\n          \"pathMatcher\": \"string\"\n        }\n      ],\n      \"pathMatchers\": [\n        {\n          \"name\": \"string\",\n          \"defaultService\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"defaultService\": \"string\"\n        }\n      ],\n      \"creationTimestamp\": \"2014-10-11T16:40:14.545Z\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://compute.googleapis.com/compute/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c3b10424-5b35-4b8c-81d8-9849e272ea6d",
+    "name": "Google Cloud CDN BackendServices UrlMaps API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
