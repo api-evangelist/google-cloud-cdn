@@ -54,6 +54,8 @@ apis:
   humanURL: https://cloud.google.com/cdn/docs
   baseURL: https://compute.googleapis.com
   tags:
+  - Cache Invalidation
+  tags_raw:
   - CacheInvalidation
   properties:
   - type: OpenAPI
