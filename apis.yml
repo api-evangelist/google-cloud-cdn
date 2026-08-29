@@ -4,6 +4,18 @@ description: >-
   Google Cloud CDN (Content Delivery Network) uses Google's globally distributed edge points of presence to cache
   HTTP(S) load-balanced content close to users. It accelerates content delivery, reduces serving costs, and improves
   availability by leveraging Google's global network infrastructure for fast, reliable content distribution.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
