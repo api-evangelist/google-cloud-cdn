@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Google Cloud CDN BackendServices UrlMaps API
+  title: Google Cloud CDN BackendServices URL Maps API
   description: Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.
   version: 1.0.0
   contact:
