@@ -60,18 +60,16 @@ apis:
     url: https://cloud.google.com/cdn/docs/quickstart
   - type: JSONSchema
     url: json-schema/cdn-backendservice.json
-- aid: google-cloud-cdn:google-cloud-cdn-cacheinvalidation-api
-  name: Google Cloud CDN CacheInvalidation API
+- aid: google-cloud-cdn:google-cloud-cdn-cache-invalidation-api
+  name: Google Cloud CDN Cache Invalidation API
   description: Invalidate cached content
   humanURL: https://cloud.google.com/cdn/docs
   baseURL: https://compute.googleapis.com
   tags:
   - Cache Invalidation
-  tags_raw:
-  - CacheInvalidation
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-cdn-cacheinvalidation-api-openapi.yml
+    url: openapi/google-cloud-cdn-cache-invalidation-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/cdn/docs/reference/rest
   - type: Authentication
@@ -80,16 +78,16 @@ apis:
     url: https://cloud.google.com/cdn/docs/quickstart
   - type: JSONSchema
     url: json-schema/cdn-backendservice.json
-- aid: google-cloud-cdn:google-cloud-cdn-urlmaps-api
-  name: Google Cloud CDN UrlMaps API
+- aid: google-cloud-cdn:google-cloud-cdn-url-maps-api
+  name: Google Cloud CDN URL maps API
   description: Manage URL maps for routing
   humanURL: https://cloud.google.com/cdn/docs
   baseURL: https://compute.googleapis.com
   tags:
-  - UrlMaps
+  - URL maps
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-cdn-urlmaps-api-openapi.yml
+    url: openapi/google-cloud-cdn-url-maps-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/cdn/docs/reference/rest
   - type: Authentication
