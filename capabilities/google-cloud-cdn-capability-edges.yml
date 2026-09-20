@@ -24,7 +24,8 @@ edges:
   reason: Configuration of CDN backend services is cloud/network infrastructure management, squarely IT
     Infrastructure Management rather than a telecom network capability.
 - tag: CacheInvalidation
-  spec_file: google-cloud-cdn-cacheinvalidation-api-openapi.yml
+  spec_file: google-cloud-cdn-cache-invalidation-api-openapi.yml
+  reanchored_from: google-cloud-cdn-cacheinvalidation-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
@@ -35,7 +36,8 @@ edges:
     Management. Not a telecom network capability (this is a cloud edge service, not operator network element
     management).
 - tag: UrlMaps
-  spec_file: google-cloud-cdn-urlmaps-api-openapi.yml
+  spec_file: google-cloud-cdn-url-maps-api-openapi.yml
+  reanchored_from: google-cloud-cdn-urlmaps-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
