@@ -1,0 +1,45 @@
+slug: google-cloud-cdn
+provider: Google Cloud CDN
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: BackendServices
+  spec_file: google-cloud-cdn-backendservices-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: '"Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache
+    invalidation through the Compute Engine API"; POST /projects/{project}/global/backendServices insertBackendService'
+  reason: Configuration of CDN backend services is cloud/network infrastructure management, squarely IT
+    Infrastructure Management rather than a telecom network capability.
+- tag: CacheInvalidation
+  spec_file: google-cloud-cdn-cacheinvalidation-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: POST .../invalidateCache  "Google Cloud CDN Invalidate Cache"; "Manages Cloud CDN resources
+    including backend services with CDN enabled"
+  reason: CDN cache invalidation is cloud infrastructure/content-delivery operation — IT Infrastructure
+    Management. Not a telecom network capability (this is a cloud edge service, not operator network element
+    management).
+- tag: UrlMaps
+  spec_file: google-cloud-cdn-urlmaps-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: GET /projects/{project}/global/urlMaps  "Google Cloud CDN List URL Maps"
+  reason: URL map configuration for CDN/load-balancing is cloud network infrastructure configuration,
+    i.e. IT Infrastructure Management.
