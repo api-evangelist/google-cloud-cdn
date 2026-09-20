@@ -97,6 +97,8 @@ apis:
   - type: JSONSchema
     url: json-schema/cdn-backendservice.json
 common:
+  - type: Plans
+    url: plans/google-cloud-cdn-plans-pricing.yml
   - type: Website
     url: https://www.google.com/
   - type: CapabilityMap
