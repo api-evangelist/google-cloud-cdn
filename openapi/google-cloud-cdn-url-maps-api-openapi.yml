@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud CDN BackendServices Cache Invalidation API
+  title: Google Cloud CDN URL Maps API
   description: Manages Cloud CDN resources including backend services with CDN enabled, URL maps, and cache invalidation through the Compute Engine API.
   version: 1.0.0
   contact:
@@ -16,66 +16,74 @@ security:
 - oauth2:
   - https://www.googleapis.com/auth/compute
 tags:
-- name: CacheInvalidation
-  description: Invalidate cached content
+- name: URL maps
+  description: Manage URL maps for routing
 paths:
-  /projects/{project}/global/backendServices/{backendService}/invalidateCache:
-    post:
-      operationId: invalidateCache
-      summary: Google Cloud CDN Invalidate Cache
-      description: Initiates a cache invalidation operation, invalidating the specified path.
+  /projects/{project}/global/urlMaps:
+    get:
+      operationId: listUrlMaps
+      summary: Google Cloud CDN List URL Maps
+      description: Retrieves the list of URL map resources available to the project.
       tags:
-      - CacheInvalidation
+      - URL maps
       parameters:
       - name: project
         in: path
         required: true
         schema:
           type: string
-      - name: backendService
-        in: path
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CacheInvalidationRule'
       responses:
         '200':
           description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Operation'
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UrlMap'
+                  nextPageToken:
+                    type: string
 components:
   schemas:
-    Operation:
+    UrlMap:
       type: object
       properties:
         id:
           type: string
         name:
           type: string
-        operationType:
+        description:
           type: string
-        status:
+        selfLink:
           type: string
-        targetLink:
+        defaultService:
           type: string
-        progress:
-          type: integer
-        insertTime:
+        hostRules:
+          type: array
+          items:
+            type: object
+            properties:
+              hosts:
+                type: array
+                items:
+                  type: string
+              pathMatcher:
+                type: string
+        pathMatchers:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              defaultService:
+                type: string
+        creationTimestamp:
           type: string
           format: date-time
-    CacheInvalidationRule:
-      type: object
-      properties:
-        path:
-          type: string
-        host:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

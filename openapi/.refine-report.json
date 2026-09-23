@@ -1,23 +1,27 @@
 {
   "provider": "google-cloud-cdn",
   "sources": [
-    "google-cloud-cdn-backendservices-api-openapi.yml",
-    "google-cloud-cdn-cacheinvalidation-api-openapi.yml",
-    "google-cloud-cdn-urlmaps-api-openapi.yml"
+    "_original/cdn-openapi.yml"
   ],
   "outputs": [
     "google-cloud-cdn-backendservices-api-openapi.yml",
     "google-cloud-cdn-cacheinvalidation-api-openapi.yml",
     "google-cloud-cdn-urlmaps-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-cdn-backendservices-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-cdn-cacheinvalidation-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-cdn-urlmaps-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cdn-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-cloud-cdn-cache-invalidation-api-openapi.yml, google-cloud-cdn-url-maps-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 3 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-cdn-backendservices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-cdn-cache-invalidation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-cdn-url-maps-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
