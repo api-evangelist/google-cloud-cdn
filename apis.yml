@@ -97,6 +97,8 @@ apis:
   - type: JSONSchema
     url: json-schema/cdn-backendservice.json
 common:
+  - type: VendorFacets
+    url: vendor-facets/google-cloud-cdn-vendor-facets.yml
   - type: RateLimits
     url: rate-limits/google-cloud-cdn-rate-limits.yml
   - type: Plans
