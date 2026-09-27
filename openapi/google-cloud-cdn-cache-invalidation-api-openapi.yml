@@ -51,6 +51,13 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    CacheInvalidationRule:
+      type: object
+      properties:
+        path:
+          type: string
+        host:
+          type: string
     Operation:
       type: object
       properties:
@@ -69,13 +76,6 @@ components:
         insertTime:
           type: string
           format: date-time
-    CacheInvalidationRule:
-      type: object
-      properties:
-        path:
-          type: string
-        host:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
