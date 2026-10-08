@@ -73,3 +73,85 @@ plans:
   period: month
   unit: GiB
   overage: '> 500 TiB: Contact Us'
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units:
+  - data
+  - request
+  plans:
+  - name: Cache data transfer out
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Cache fill
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: HTTP/HTTPS cache lookup requests
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Cache data transfer out — North America 0-10 TiB
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Cache data transfer out — China 0-10 TiB
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Cache fill within North America or Europe
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Cache fill within Asia Pacific/South America/Middle East/Africa/Oceania
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Inter-region cache fill
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Opt-in region Jakarta (CGK) < 10 TiB
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
