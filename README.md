@@ -1,4 +1,4 @@
-# Google Cloud CDN (google-cloud-cdn)
+# Google Cloud CDN
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,156 @@
 
 Google Cloud CDN (Content Delivery Network) uses Google's globally distributed edge points of presence to cache HTTP(S) load-balanced content close to users. It accelerates content delivery, reduces serving costs, and improves availability by leveraging Google's global network infrastructure for fast, reliable content distribution.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-search/google-cloud-cdn/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-search/google-cloud-cdn/refs/heads/main/apis.yml)
+**Areas:** Caching · CDN · Content Delivery · Google Cloud · Networking
 
-## Scope
+## Google Cloud CDN on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud CDN is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-cdn/](https://apis.io/providers/google-cloud-cdn/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Caching
-- CDN
-- Content Delivery
-- Google Cloud
-- Networking
+- [Google Cloud CDN BackendServices API](https://apis.io/apis/google-cloud-cdn/google-cloud-cdn-backendservices-api/) — Manage CDN-enabled backend services
+- [Google Cloud CDN Cache Invalidation API](https://apis.io/apis/google-cloud-cdn/google-cloud-cdn-cache-invalidation-api/) — Invalidate cached content
+- [Google Cloud CDN URL maps API](https://apis.io/apis/google-cloud-cdn/google-cloud-cdn-url-maps-api/) — Manage URL maps for routing
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud CDN API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud CDN API enables programmatic management of CDN-enabled backend services, URL maps, cache invalidation, and edge caching policies through the Compute Engine API, providing control over content distribution and caching behavior.
+- [Google Cloud Cdn Agentic Access](https://apis.io/agentic-access/google-cloud-cdn/google-cloud-cdn-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/cdn/docs](https://cloud.google.com/cdn/docs)
-- **Base URL:** `https://compute.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Backend Services
-- Cache Invalidation
-- Edge Caching
-- Load Balancing
-- URL Maps
+- [Google Cloud CDN Backend Service](https://apis.io/schemas/google-cloud-cdn/cdn-backendservice/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/cdn/docs/reference/rest)
-- [OpenAPI](openapi/cdn-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cdn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cdn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/docs/authentication)
-- [Getting Started](https://cloud.google.com/cdn/docs/quickstart)
-- [JSON Schema](json-schema/cdn-backendservice.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Cdn Context](https://apis.io/jsonld/google-cloud-cdn/cdn-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/cdn)
-- [Getting Started](https://cloud.google.com/cdn/docs/quickstart)
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud CDN API](https://apis.io/collections/google-cloud-cdn/open-cdn/)
+- [Google Cloud CDN BackendServices API](https://apis.io/collections/google-cloud-cdn/open-google-cloud-cdn-backendservices-api/)
+- [Google Cloud CDN BackendServices CacheInvalidation API](https://apis.io/collections/google-cloud-cdn/open-google-cloud-cdn-cacheinvalidation-api/)
+- [Google Cloud CDN BackendServices UrlMaps API](https://apis.io/collections/google-cloud-cdn/open-google-cloud-cdn-urlmaps-api/)
+- [Google Cloud CDN BackendServices API](https://apis.io/collections/google-cloud-cdn/postman-google-cloud-cdn-backendservices-api/)
+- [Google Cloud CDN BackendServices CacheInvalidation API](https://apis.io/collections/google-cloud-cdn/postman-google-cloud-cdn-cacheinvalidation-api/)
+- [Google Cloud CDN BackendServices UrlMaps API](https://apis.io/collections/google-cloud-cdn/postman-google-cloud-cdn-urlmaps-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud CDN — jsonschema rules](https://apis.io/rules/google-cloud-cdn/google-cloud-cdn-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Cdn Authentication](https://apis.io/security/google-cloud-cdn/google-cloud-cdn-authentication/)
+- [Google Cloud Cdn Domain Security](https://apis.io/security/google-cloud-cdn/google-cloud-cdn-domain-security/)
+- [Google Cloud Cdn Vulnerability Disclosure](https://apis.io/security/google-cloud-cdn/google-cloud-cdn-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Cdn Scopes](https://apis.io/scopes/google-cloud-cdn/google-cloud-cdn-scopes/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Cdn Plans Pricing](https://apis.io/plans/google-cloud-cdn/google-cloud-cdn-plans-pricing/)
+- [Google Cloud Cdn Price Estimates](https://apis.io/plans/google-cloud-cdn/google-cloud-cdn-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Cdn Rate Limits](https://apis.io/rate-limits/google-cloud-cdn/google-cloud-cdn-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Cdn Finops](https://apis.io/finops/google-cloud-cdn/google-cloud-cdn-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/cdn/docs)
-- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting started](https://cloud.google.com/cdn/docs/quickstart)
 - [Pricing](https://cloud.google.com/cdn/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/cdn/docs/support)
-- [JSON-LD](json-ld/cdn-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 54.7** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 60.5 |
+| Developer ergonomics | 44.0 |
+| Access clarity | 63.2 |
+
+**Agent readiness 28.9** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-cdn/](https://apis.io/providers/google-cloud-cdn/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud CDN: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-cdn/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
